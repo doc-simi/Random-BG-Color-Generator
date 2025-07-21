@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  color: #fff;
+  line-height: 1.6;
+}
+
+body {
+  background-color: #333;
+  font-size: 1.6rem;
+  transition: background-color 0.3s;
+}
+
+.container {
+  /* border: 1px solid red; */
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.bigText {
+  width: 70%;
+  /* border: 1px solid red; */
+  text-align: center;
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  animation: slidesUp 3s backwards;
+}
+
+.buttons {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.btn {
+  animation: slidesUp 3s 1s backwards, showBtn 3s 1s backwards;
+  padding: 2rem 3.5rem;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+}
+
+.btn:disabled {
+  cursor: not-allowed; /* Shows it's not clickable */
+  opacity: 0.8; /* Faded look */
+  box-shadow: none;
+}
+
+.btn:not(:disabled):hover {
+  transform: translateY(-0.5rem);
+}
+
+.btn:active {
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.4);
+  transform: translateY(0);
+}
+
+@keyframes slidesUp {
+  from {
+    transform: translateY(-30%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes showBtn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

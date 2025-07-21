@@ -1,0 +1,29 @@
+VARIABLES
+- Global
+- currentBgColor = select body bgColor style.
+
+1. Page Loads
+- There will be 3 buttons ("Generate bgColor", "Next(disabled onPageLoads)", "Previous(disabled onPageLoads)")
+- activeBgColor set to NaN/undefined
+- currentBgColor set to bgColor from page
+
+2. User clicks "Generate bgColor"
+- Generate a random number from 0 to 255, 3 times = [color(n)].
+- Repeat process 10 times = [randomBgColor]
+- Switch bgColor to [randomBgColor][0]
+- Set activeBgColor to 0.
+- Enable "Next"
+
+3. User clicks "Next"
+- update activeBgColor (adds 1)
+- change currentBgColor = [randomBgColor][activeBgColor]
+- is activeBgColor = 10
+YES
+- Disable "Next"
+
+4. User clicks "No"
+- update activeBgColor (substracts 1)
+- change currentBgColor = [randomBgColor][activeBgColor]
+- is activeBgColor = 0
+YES
+- Disable "Previous"
